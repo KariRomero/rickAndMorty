@@ -10,9 +10,9 @@ function handleChange(event) {
 }
 
    return (
-      <div>
-         <input type='search' onChange={handleChange} value={id} />
-         <button onClick={()=>onSearch(id)}>Agregar</button>
+      <div className={style.container}>
+         <input type='search' onChange={handleChange} value={id} className={style.input}/>
+         <button onClick={()=>onSearch(id)} className={style.button}>Agregar</button>
       </div>
    );
 }
