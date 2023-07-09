@@ -1,0 +1,66 @@
+ .container{
+    width: 200px;
+    height: 220px;
+    margin: 25px;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 5%;
+    box-shadow: 2px 2px 5px 0px #000000;
+}
+
+.container:hover{
+    box-shadow: 2px 2px 5px 0px #7144db;
+}
+
+.topcard{
+    position: relative;
+}
+
+
+.name{    
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1px;
+}
+
+.name:hover{
+    color:rgba(255, 255, 255, 0.897)
+}
+
+/* .card{
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    line-height: 0.3em;
+    margin-bottom: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+.image{
+    display: block;
+    margin: auto;
+   
+    width: 100%;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
+    
+    
+}
+
+.button{
+    position: absolute;
+    float: right;
+    margin-left: 70px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 15px;
+    
+}
+
+.button:hover{
+    font-size: 20px;
+}
+
+ 
