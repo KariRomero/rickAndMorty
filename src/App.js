@@ -1,10 +1,13 @@
 import './App.css';
 import Cards from './components/Cards/Cards';
 import Nav from './components/Nav/Nav';
+import Form from './components/Form/Form';
+import Detail from './components/Detail/Detail';
+import Error from './components/Error/Error';
 // import characters from './data.js';
 import { useState } from 'react';
 import axios from 'axios';
-import { Route,Routes } from 'react-router-dom';
+import { Route,Routes,useLocation } from 'react-router-dom';
 
 function App() {
 
@@ -39,15 +42,29 @@ function App() {
     
       // Generar un número aleatorio entre min y max
       var id = Math.floor(Math.random() * (max - min + 1)) + min;
-      console.log(id)
+      //console.log(id)
       return id;     
     }
 
+    const location = useLocation()
+    const showNav = location.pathname !== '/';
+
+    
+
    return (
       <div className='App'>
+         {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
+
+         <Routes>
+            <Route path= "/" element= {<Form/>}/>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+            <Route path='/detail/:id' element={<Detail/>}/>
+            <Route path='*' element={<Error/>}/>
+         </Routes>
          
-         <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>
-         <Cards characters={characters} onClose={onClose}/>
+
+
+         
          
       </div>
    );
