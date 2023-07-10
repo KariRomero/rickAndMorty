@@ -4,7 +4,6 @@ import Nav from './components/Nav/Nav';
 import Form from './components/Form/Form';
 import Detail from './components/Detail/Detail';
 import Error from './components/Error/Error';
-// import characters from './data.js';
 import { useState } from 'react';
 import axios from 'axios';
 import { Route,Routes,useLocation } from 'react-router-dom';

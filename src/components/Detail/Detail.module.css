@@ -1,0 +1,24 @@
+.container{
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 5%;
+    box-shadow: 2px 2px 5px 0px #000000;
+    width: 60%;
+    margin-left: 20%;
+    
+}
+
+.name{
+    font-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Detail{
+    text-align: left;
+    font-size: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10%;
+}
+
+.image{
+    
+}

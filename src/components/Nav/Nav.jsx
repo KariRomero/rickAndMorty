@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 export default function Nav ({onSearch, random}) {
     return(
-        <div className={style.Nav}>
+        <div className={style.nav}>
             {/* <Link to='/about'>
                 <button>About</button>
             </Link> */}
 
             <Link to='/home'>
-                <button>Home</button>
+                <button className={style.button}>Home</button>
             </Link>
-            <button onClick={()=>onSearch(random())}>Random</button>
+            <button onClick={()=>onSearch(random())} className={style.button}>Random</button>
             <SearchBar onSearch={onSearch}/>
         </div>
     )
