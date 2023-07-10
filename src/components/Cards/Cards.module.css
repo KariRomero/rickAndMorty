@@ -3,13 +3,16 @@
     background-size: cover;
     background-position: center;
     height: 100vh;  
+    position: relative;
+    z-index: 1;
+    
     
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
-    background-color: rgba(0, 0, 0, 0.87);
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0);
     margin: auto;    
   }

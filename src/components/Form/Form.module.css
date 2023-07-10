@@ -16,6 +16,13 @@
    
 }
 
+.image{
+    width: 130%;
+    height: auto;
+    margin-bottom: 5%;
+   
+}
+
 .form{
     display: flex;
     flex-direction: column;

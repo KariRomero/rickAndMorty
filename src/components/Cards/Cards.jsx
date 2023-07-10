@@ -5,6 +5,7 @@ import style from './Cards.module.css'
 
 export default function Cards({characters, onClose}) {
    return ( 
+      
    <div className={style.background}>
    <div className={style.container}>
       
