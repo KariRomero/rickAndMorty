@@ -47,12 +47,14 @@ function App() {
 
     const location = useLocation()
     const showNav = location.pathname !== '/';
+    
 
     
 
    return (
       <div className='App'>
          {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
+         
 
          <Routes>
             <Route path= "/" element= {<Form/>}/>
