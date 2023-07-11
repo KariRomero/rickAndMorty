@@ -19,7 +19,7 @@
 .name{    
     color: rgb(86, 184, 94);
     text-align: center;
-    font-size: 15px;
+    font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 1px;
 }
@@ -43,7 +43,7 @@
 
 .image{
     display: block;
-    margin: auto;
+    /* margin: auto; */
    
     width: 100%;
     border-top-left-radius: 5%;
