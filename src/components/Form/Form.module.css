@@ -39,6 +39,13 @@
     color: rgb(125, 230, 76);
 }
 
+.error{    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 70%;
+    color: rgb(76, 230, 222);
+    margin: auto;
+}
+
 .button{
     background-color: rgba(0, 0, 0, 0);
     cursor: pointer;

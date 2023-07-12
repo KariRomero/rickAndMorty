@@ -8,12 +8,24 @@ export default function Nav ({onSearch, random}) {
             {/* <Link to='/about'>
                 <button>About</button>
             </Link> */}
-
-            <Link to='/home'>
-                <button className={style.button}>Home</button>
+        
+            <Link to='/' className={style.link}>
+            <button className={style.button}>
+                Log Out
+            </button>
             </Link>
+
+
+            <Link to='/home' className={style.link}>
+            <button className={style.button}>
+                Home
+            </button>
+            </Link>
+        
+
             <button onClick={()=>onSearch(random())} className={style.button}>Random</button>
             <SearchBar onSearch={onSearch}/>
+
         </div>
     )
 
