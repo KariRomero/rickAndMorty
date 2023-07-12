@@ -1,16 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import style from './Form.module.css';
 import png from './Data/png.png'
+import validate from "./validate";
 
-export default function Form(){
-    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,10}/;
-
-    const navigate = useNavigate();
-    const EMAIL = 'karinaromero@gmail.com';
-    const PASSWORD = 'Asd.123';
-
+export default function Form({login}){
 
     const [userData, setUserData] = useState({
         email:'',
@@ -21,44 +15,7 @@ export default function Form(){
         email:'',
         password:''
     })
-
-    const [access,setAccess] = useState(false);
-
-    function validate(userData){
-        const errors= {}
-        if(!userData.email){
-            errors.email = 'Debe completar email'
-        }
-        if(userData.email.length>35){
-            errors.email='Email debe tener menos de 35 caracteres'
-        }
-        else if (!userData.password){
-            errors.password = 'Debe haber un password'
-        }
-        else if (!emailRegex.test(userData.email)){
-            errors.email = 'Debe ser un email válido'
-        }
-        else if(userData.password.length<6 || userData.password.length>10){
-            errors.password = 'La password debe contener entre 6 y 10 caracteres'
-        }
-        else if (!passwordRegex.test(userData.password)){
-            errors.password = 'Debe ser un password válido'
-        }        
-        
-        return errors;
-    }
-
-    function login(userData) {
-        if (userData.password === PASSWORD && userData.email === EMAIL) {
-           setAccess(true);
-           navigate('/home');
-        }
-     }
-
-     useEffect(() => {
-        !access && navigate('/');
-     }, [access]);
-
+    
     function handleChange(event){
         setUserData({
             ...userData,
@@ -70,21 +27,32 @@ export default function Form(){
         }))
     }
 
+
+    function handleSubmit(event){
+        event.preventDefault();
+        login(userData);
+    }
+
+
     return(
         <div className={style.background}>
             <div className={style.container}>
                 <img src={png} alt='Logo Rick and Morty' className={style.image}/>
-                <form className={style.form} >
+                <form className={style.form} onSubmit={handleSubmit} >
                     
-                    <input className={style.input} placeholder='E-mail' name='email' value={userData.email} onChange={handleChange} ></input>
-                    <p className={style.error}>{errors.email}</p>
+                    <input type='text' className={style.input} placeholder='E-mail' name='email' value={userData.email} onChange={handleChange} ></input>
+                    {errors.email && <p className={style.error}>{errors.email}</p>}
                     
-                    <input className={style.input} placeholder='Password' name='password' value={userData.password} onChange={handleChange}></input>
-                    <p className={style.error}>{errors.password}</p>
+                    <input type='password' className={style.input} placeholder='Password' name='password' value={userData.password} onChange={handleChange}></input>
+                    {errors.password && <p className={style.error}>{errors.password}</p>}
 
-                    <Link to='/home'>
-                    <button className={style.button}>Login</button>
-                    </Link>
+                    
+                        {/* Object.keys(errors) toma los elementos del objeto errors y los coloca dentro de un array
+                        {Object.keys(errors).length===0 ? <button type='submit' className={style.button} >Login</button> : null} */}
+                        <button  className={style.button} >Login</button>
+
+                    
+                    
                 </form>
             </div>
         </div>
