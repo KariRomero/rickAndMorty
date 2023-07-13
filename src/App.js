@@ -4,6 +4,7 @@ import Nav from './components/Nav/Nav';
 import Form from './components/Form/Form';
 import Detail from './components/Detail/Detail';
 import Error from './components/Error/Error';
+import Favorites from './components/Favorites/Favorites';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { Route,Routes,useLocation,useNavigate } from 'react-router-dom';
@@ -80,6 +81,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='*' element={<Error/>}/>
+            <Route path='/favorites' element={<Favorites/>}/>
          </Routes>
          
 

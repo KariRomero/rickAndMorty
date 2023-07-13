@@ -15,10 +15,15 @@ export default function Nav ({onSearch, random}) {
             </button>
             </Link>
 
-
             <Link to='/home' className={style.link}>
             <button className={style.button}>
                 Home
+            </button>
+            </Link>
+
+            <Link to='/favorites' className={style.link}>
+            <button className={style.button}>
+                Favorites
             </button>
             </Link>
         
