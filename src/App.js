@@ -1,14 +1,13 @@
 import './App.css';
-import Cards from './components/Cards/Cards';
+import Cards from './views/Cards/Cards';
 import Nav from './components/Nav/Nav';
-import Form from './components/Form/Form';
-import Detail from './components/Detail/Detail';
-import Error from './components/Error/Error';
-import Favorites from './components/Favorites/Favorites';
+import Form from './views/Form/Form';
+import Detail from './views/Detail/Detail';
+import Error from './views/Error/Error';
+import Favorites from './views/Favorites/Favorites';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { Route,Routes,useLocation,useNavigate } from 'react-router-dom';
-
 
 
 function App() {
@@ -62,15 +61,9 @@ function App() {
       return id;     
     }
 
-    
-
-
     const location = useLocation()
     const showNav = location.pathname !== '/';
     
-
-    
-
    return (
       <div className='App'>
          {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
@@ -81,7 +74,7 @@ function App() {
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='*' element={<Error/>}/>
-            <Route path='/favorites' element={<Favorites/>}/>
+            <Route path='/favorites' element={<Favorites onClose={onClose}/>}/>
          </Routes>
          
 

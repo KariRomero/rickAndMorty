@@ -1,4 +1,4 @@
-import Card from '../Card/Card';
+import Card from '../../components/Card/Card';
 import style from './Cards.module.css'
 
 
@@ -15,10 +15,10 @@ export default function Cards({characters, onClose}) {
                <Card key={index}
                   id={element.id}
                   name={element.name}
-                  status={element.status}
-                  species={element.species}
-                  gender={element.gender}
-                  origin={element.origin.name}
+                  // status={element.status}
+                  // species={element.species}
+                  // gender={element.gender}
+                  // origin={element.origin.name}
                   image={element.image}
                   onClose={onClose}            
                ></Card>

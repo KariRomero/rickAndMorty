@@ -1,4 +1,4 @@
-import { ADD_FAV, REMOVE_FAV } from "./action-types";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, RESET} from "./action-types";
 
 
 
@@ -15,3 +15,24 @@ export const removeFav = (id) => {
         payload:id
     }
 };
+
+export const filterCards = (gender) => {
+    return{
+        type: FILTER,
+        payload: gender
+    }
+};
+
+export const orderCards = (order) => {
+    return{
+        type: ORDER,
+        payload: order
+}   
+};
+
+export const reset = () => {
+    return{
+        type: RESET
+    }
+}
+

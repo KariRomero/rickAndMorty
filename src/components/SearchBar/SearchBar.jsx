@@ -15,4 +15,4 @@ function handleChange(event) {
          <button onClick={()=>onSearch(id)} className={style.button}>Agregar</button>
       </div>
    );
-}
+};
