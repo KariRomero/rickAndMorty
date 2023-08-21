@@ -1,5 +1,6 @@
 .background{
-    background-image: url('./Data/background3.jpg');
+    background-image: url('../../assets/estrellas.jpg');
+    
     background-size: cover;
     background-position: center;
     height: 100vh;  
@@ -15,9 +16,8 @@
     flex-wrap: wrap;
     justify-content: left;
     width: 100%;
-    background-color: rgba(196, 45, 45, 0);
+    background-color: rgba(136, 45, 196, 0);
     margin-top: 2%;  
     position: absolute;
-    z-index: 2;
-      
+    z-index: 2;      
   }

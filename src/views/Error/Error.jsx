@@ -1,5 +1,5 @@
 // import image from './Data/background7.jpg'
-import image2 from './Data/background8.jpg'
+import image2 from '../../assets/background8.jpg'
 import style from './Error.module.css'
 
 export default function Error(){

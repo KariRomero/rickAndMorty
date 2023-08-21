@@ -1,5 +1,4 @@
 import SearchBar from "../SearchBar/SearchBar";
-import Filter from "../Filter/Filter";
 import style from './Nav.module.css'
 import { Link } from "react-router-dom";
 
@@ -10,8 +9,6 @@ export default function Nav ({onSearch, random}) {
                 <button>About</button>
             </Link> */}
 
-            {/* <Filter/> */}
-        
             <Link to='/' className={style.link}>
             <button className={style.button}>
                 Log Out

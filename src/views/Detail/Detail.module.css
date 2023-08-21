@@ -1,5 +1,5 @@
 .background{
-    background-image: url('./Data/background2.jpg');
+    background-image: url('../../assets/estrellas.jpg');
     background-size: 100%;
     
     /* background-position: center top 30%; */
@@ -17,7 +17,7 @@
     border-radius: 5%;
     box-shadow: 2px 2px 5px 0px #000000;
     width: 50%;
-    height: 50%;
+    height: 60%;
     margin-left: 25%;
     margin-top: 10%;
     position: absolute;
@@ -36,6 +36,7 @@
 .detailcontainer{
     /* background-color: antiquewhite; */
     margin-left: auto;
+    
 }
 
 .image{
@@ -48,4 +49,13 @@
     border-top-right-radius: 5%; */
     
     
+}
+
+.button{
+    color: #4bac63;
+    background-color: rgba(0, 0, 0, 0.432);
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
 }

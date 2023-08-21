@@ -1,6 +1,6 @@
 import { useState } from "react";
 import style from './Form.module.css';
-import png from './Data/png.png'
+import png from '../../assets/png.png'
 import validate from "./validate";
 
 export default function Form({login}){

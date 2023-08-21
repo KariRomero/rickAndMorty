@@ -65,12 +65,12 @@ function App() {
     
    return (
       <div className='App'>
-         {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
+         {/* {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>} */}
          
 
          <Routes>
             <Route path= "/" element= {<Form login={login}/>}/>
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} random={generarNumeroAleatorio}/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='*' element={<Error/>}/>
             <Route path='/favorites' element={<Favorites onClose={onClose}/>}/>

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { addFav, removeFav } from '../../redux/actions';
 
-export default function Card({id,name,image,onClose,origin}) {
+export default function Card({id,name,image,onClose,origin,gender}) {
    const dispatch = useDispatch();
    const myFavorites = useSelector(state=>state.myFavorites)
    const [isFav, setIsFav] = useState(false);
@@ -16,7 +16,7 @@ export default function Card({id,name,image,onClose,origin}) {
       }
       else{
          setIsFav(true);
-         dispatch(addFav({id,name,image,onClose}))
+         dispatch(addFav({id,name,image,onClose,gender}))
       }
    }
 
@@ -52,6 +52,7 @@ export default function Card({id,name,image,onClose,origin}) {
          
             <h2 className={style.name}>{name}</h2>
             <h3 className={style.name}>Proveniente de {origin}</h3>
+            {/* <h3>{gender}</h3> */}
           </Link>     
          
       </div>

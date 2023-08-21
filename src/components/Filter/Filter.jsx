@@ -1,5 +1,7 @@
-import { useDispatch, useSelector  } from "react-redux";
+import style from './Filter.module.css'
+import { useDispatch } from "react-redux";
 import { orderCards, filterCards, reset } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 const Filter = () => {
 
@@ -16,7 +18,7 @@ const Filter = () => {
     }
 
     return(
-        <div>
+        <div className={style.container}>
 
             <div>
                 <select name='order' onChange={handlerOrder} defaultValue={'DEFAULT'}>
@@ -32,7 +34,10 @@ const Filter = () => {
                     <option value='Genderless'>Genderless</option>
                     <option value='unknown'>unknown</option>
                 </select>
-                <button onClick={()=>dispatch(reset())}>Reset</button>
+                <button onClick={()=>dispatch(reset())} className={style.button}>Reset</button>
+                <Link to='/home'>
+                <button className={style.button}>Home</button>
+                </Link>
             </div>
 
         </div>
