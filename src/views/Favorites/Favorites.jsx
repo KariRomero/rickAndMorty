@@ -5,21 +5,21 @@ import { orderCards, filterCards, reset } from "../../redux/actions";
 
 const Favorites = () => {
     const { myFavorites } =useSelector(state => state);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    const handlerOrder = (event)=> {
-        event.preventDefault()
-        dispatch(orderCards(event.target.value))
-    }
+    // const handlerOrder = (event)=> {
+    //     event.preventDefault()
+    //     dispatch(orderCards(event.target.value))
+    // }
 
-    const handlerFilter = (event)=> {
-        event.preventDefault()
-        dispatch(filterCards(event.target.value))
-    }
+    // const handlerFilter = (event)=> {
+    //     event.preventDefault()
+    //     dispatch(filterCards(event.target.value))
+    // }
 
     return(
         <div className={style.back}>
-            <div>
+            {/* <div>
                 <select name='order' onChange={handlerOrder} defaultValue={'DEFAULT'}>
                     <option value='DEFAULT' disable>Order by:</option>
                     <option value='Ascendente'>Ascendente</option>
@@ -34,7 +34,7 @@ const Favorites = () => {
                     <option value='unknown'>unknown</option>
                 </select>
                 <button onClick={()=>dispatch(reset())}>Reset</button>
-            </div>
+            </div> */}
             {
                 myFavorites.map((character)=>{
                     return(

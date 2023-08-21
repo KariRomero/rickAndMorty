@@ -1,9 +1,8 @@
  .container{
-    width: 17%;
+    width: 200px;
     height: auto;
-    margin: 4%;
+    margin: 10px;
     background-color: rgba(0, 0, 0, 0.616);
-    border-radius: 5%;
     box-shadow: 2px 2px 5px 0px #000000;
 }
 
@@ -12,7 +11,10 @@
 }
 
 .topcard{
+    display: flex;
+    justify-content: space-around;
     position: relative;
+    z-index: 1;
 }
 
 
@@ -32,51 +34,37 @@
     text-decoration: none;
 }
 
-/* .card{
-    color: black;
-    text-align: center;
-    font-size: 10px;
-    line-height: 0.3em;
-    margin-bottom: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
-
 .image{
     display: block;
-    /* margin: auto; */
-   
-    width: 100%;
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
-    /* position: relative; */
-    /* z-index: 1; */
-    
-    
+    width: 100%;    
 }
 
 .button{
     position: absolute;
     float: right;
-    margin-left: 70px;
-    margin-top: 5px;
-    background-color: rgba(0, 0, 0, 0);
+    margin-left: 80%;
+    margin-top: 2%;
+    color: #4bac63;
+    background-color: rgba(0, 0, 0, 0.432);
     border: none;
+    border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
-    /* z-index: 2; */
+    z-index: 2;
     
 }
 
 .buttonFav{
     position: absolute;
     float: right;
-    margin-right: 70px;
-    margin-top: 5px;
-    background-color: rgba(0, 0, 0, 0);
+    margin-right: 80%;
+    margin-top: 2%;    
+    background-color: rgba(0, 0, 0, 0.432);
     border: none;
+    border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
-    /* z-index: 2; */
+    z-index: 2;
     
 }
 

@@ -57,7 +57,6 @@ function App() {
     
       // Generar un número aleatorio entre min y max
       var id = Math.floor(Math.random() * (max - min + 1)) + min;
-      //console.log(id)
       return id;     
     }
 
@@ -86,3 +85,5 @@ function App() {
 }
 
 export default App;
+
+

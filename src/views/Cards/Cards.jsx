@@ -15,13 +15,10 @@ export default function Cards({characters, onClose}) {
                <Card key={index}
                   id={element.id}
                   name={element.name}
-                  // status={element.status}
-                  // species={element.species}
-                  // gender={element.gender}
-                  // origin={element.origin.name}
+                  origin={element.origin.name}
                   image={element.image}
                   onClose={onClose}            
-               ></Card>
+               />
             );
          })}
                  
