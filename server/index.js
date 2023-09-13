@@ -23,7 +23,7 @@
 // });
 
 const http = require('http');
-const character = require('./utils/data');
+const { getCharById } = require('./controllers/getCharById');
 const PORT = 3001;
 
 http
@@ -33,8 +33,7 @@ http
     if(req.url.includes('/rickandmorty/character')){ // /rickandmorty/character/5
       const id = req.url.split('/').at(-1) //at(-1) es la ultima posicion del array
       //console.log(id); 5
-      let charactersFind = character.find((char)=>char.id === Number(id));
-      res.writeHead(200,{'Content-type':'application/json'}).end(JSON.stringify(charactersFind));
+      getCharById(res,Number(id))      
     }
 })
   .listen(PORT,()=>{
