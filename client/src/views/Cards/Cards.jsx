@@ -1,5 +1,6 @@
 import Card from '../../components/Card/Card';
 import Nav from '../../components/Nav/Nav';
+import Paginate from '../../components/Paginate/Paginate';
 import style from './Cards.module.css'
 
 
@@ -27,5 +28,8 @@ export default function Cards({characters, onClose,onSearch,random}) {
                  
       
    </div>
+
+   <Paginate/>
+
    </div>
 )};

@@ -21,7 +21,8 @@ const reducer = (state=initialState, action)=>{
             return{   
                 ...state,
                 myFavorites: newFav,
-                allCharacters: newFav            
+                allCharacters: newFav,
+                filtered: newFav            
             }
         case FILTER:
            const newFilter = state.filtered.filter(char=> char.gender === action.payload);
