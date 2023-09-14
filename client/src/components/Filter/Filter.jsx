@@ -34,7 +34,7 @@ const Filter = () => {
                     <option value='Genderless'>Genderless</option>
                     <option value='unknown'>unknown</option>
                 </select>
-                <button onClick={()=>dispatch(reset())} className={style.button}>Reset</button>
+                <button onClick={()=>dispatch(reset())} className={style.button}>Quitar filtros</button>
                 <Link to='/home'>
                 <button className={style.button}>Home</button>
                 </Link>

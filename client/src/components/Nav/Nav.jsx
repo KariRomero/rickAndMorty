@@ -28,7 +28,7 @@ export default function Nav ({onSearch, random}) {
             </Link>
         
 
-            <button onClick={()=>onSearch(random())} className={style.button}>Random</button>
+            <button onClick={()=>onSearch(random())} className={style.button}>Random Character</button>
             <SearchBar onSearch={onSearch}/>
 
         </div>

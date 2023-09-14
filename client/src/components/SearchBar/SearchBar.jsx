@@ -12,7 +12,7 @@ function handleChange(event) {
    return (
       <div className={style.container}>
          <input type='search' onChange={handleChange} value={id} className={style.input}/>
-         <button onClick={()=>onSearch(id)} className={style.button}>Agregar</button>
+         <button onClick={()=>onSearch(id)} className={style.button}>AddCharacter</button>
       </div>
    );
 };
