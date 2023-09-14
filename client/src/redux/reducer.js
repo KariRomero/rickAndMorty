@@ -3,24 +3,29 @@ import { ADD_FAV, REMOVE_FAV, ORDER,FILTER, RESET } from "./action-types";
 
 const initialState = {  
     myFavorites:[],  
-    allCharacters:[],
-    filtered:[]
+    allCharacters:[]    
 }
 
 const reducer = (state=initialState, action)=>{
     switch(action.type){
         case ADD_FAV:
-            return { ...state, myFavorites: action.payload, allCharacters: action.payload };
+            return { ...state, 
+                myFavorites: action.payload, 
+                allCharacters: action.payload 
+            };
         case REMOVE_FAV:
-            return { ...state, myFavorites: action.payload };
+            return { ...state, 
+                myFavorites: action.payload,
+                allCharacters:action.payload 
+            };
         case FILTER:
-           const newFilter = state.filtered.filter(char=> char.gender === action.payload);
+           const newFilter = state.allCharacters.filter(char=> char.gender === action.payload);
            return{
             ...state,
             myFavorites:newFilter
            }
         case ORDER:
-            const newOrder = state.allCharacters.sort((a,b)=>{
+            const newOrder = state.myFavorites.sort((a,b)=>{
                 if(a.id > b.id){
                     return'Ascendente' === action.payload ? 1 : -1;
                 }

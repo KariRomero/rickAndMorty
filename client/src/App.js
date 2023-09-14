@@ -69,7 +69,7 @@ function App() {
     
    return (
       <div className='App'>
-         {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
+         {/* {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>} */}
          
 
          <Routes>
