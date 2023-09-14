@@ -32,6 +32,7 @@ export default function Form({login}){
         login(userData);
     }
 
+    const emptyErrors = Object.keys(errors).length===0;
 
     return(
         <div className={style.background}>
@@ -48,7 +49,7 @@ export default function Form({login}){
                     
                         {/* Object.keys(errors) toma los elementos del objeto errors y los coloca dentro de un array
                         {Object.keys(errors).length===0 ? <button type='submit' className={style.button} >Login</button> : null} */}
-                        <button  className={style.button} >Login</button>
+                       {emptyErrors && <button  className={style.button} >Login</button>}
 
                     
                     
