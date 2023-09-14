@@ -15,35 +15,39 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const [access,setAccess] = useState(false);
 
-   const EMAIL = 'karinaromero@gmail.com';
-   const PASSWORD = 'Asd&123';
    const navigate = useNavigate();
 
-   function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
+   async function login(userData){
+      try {
+         const { email, password } = userData;
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         const { data } = await axios(URL + `?email=${email}&password=${password}`)
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+      } catch (error) {
+         alert('no es usuario')
+         // console.log(error.message)
       }
-   }
+   };
 
    useEffect(() => {
       !access && navigate('/');
    }, [access]);
 
-   function onSearch(id) {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+   async function onSearch(id){
+      try {
+         const URL_BASE = "http://localhost:3001/rickandmorty/character"
+         const { data } = await axios.get(`${URL_BASE}/${id}`)
          if (data.name) {
-            let exist = characters.find((character)=>character.id === data.id);
-            if (exist){
-               alert('Ya existe');
-            } else {
             setCharacters((oldChars) => [...oldChars, data]);
-         }
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
-      });
-   }
+      } catch (error) {
+         console.log(error.message)
+      }
+   };
 
    function onClose(id){
       setCharacters((oldChars)=>{
@@ -65,7 +69,7 @@ function App() {
     
    return (
       <div className='App'>
-         {/* {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>} */}
+         {showNav && <Nav onSearch={onSearch} random={generarNumeroAleatorio}/>}
          
 
          <Routes>
